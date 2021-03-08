@@ -1,10 +1,6 @@
 ---
-- name: List Name
-  command: uname -n
-  register: uname_worker
-  
 - name: Set Hostname Worker
-  shell: hostnamectl set-hostname worker-{{ uname_worker }}
+  shell: hostnamectl set-hostname worker-{{ inventory_hostname }}
 
 - name: Copy join to nodes
   copy:
