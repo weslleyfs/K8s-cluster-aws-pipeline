@@ -1,7 +1,8 @@
 ---
 - name: Set hostname Workers
-  become: yes
-  shell: hostnamectl set-hostname worker-'uname -n'
+  command: uname -n
+  register: uname_worker
+  shell: hostnamectl set-hostname worker-{{ uname_worker }}
 
 - name: Copy join to nodes
   copy:
