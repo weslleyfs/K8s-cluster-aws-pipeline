@@ -1,4 +1,8 @@
 ---
+- name: Set hostname Master
+  hostname:
+    name: master
+
 - name: Destroy cluster before starting again
   command: kubeadm reset -f
 
