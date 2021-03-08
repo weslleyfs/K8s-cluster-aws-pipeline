@@ -24,6 +24,11 @@ steps:
       from_secret: aws_secret
   commands:
   - terraform apply -auto-approve
+
+- name: Wait infra start on aws
+  image: weslleyf/ansibleandterraform:latest
+  commands:
+  - sleep 20
   
 - name: apply ansible playbook
   image: weslleyf/ansibleandterraform:latest
@@ -40,8 +45,5 @@ steps:
   - unset PRIVATE_KEY
   - chmod 600 ~/.ssh/id_rsa
   - ansible-playbook -i ec2.py --limit "tag_name_k8s" -u ubuntu --ssh-common-args='-o StrictHostKeyChecking=no' --private-key ~/.ssh/id_rsa site.yml
- 
-trigger:
-  status:
-    - failure
+
 ...
