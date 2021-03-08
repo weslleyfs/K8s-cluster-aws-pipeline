@@ -1,3 +1,4 @@
+---
 - name: Destroy cluster before starting again
   command: kubeadm reset -f
 
@@ -25,7 +26,12 @@
   delegate_to: localhost
   become: no
 
+- name: Configure kubeconfig
+  shell: echo "export KUBECONFIG=/etc/kubernetes/admin.conf" >> ~root/.bashrc
+  become: yes
+
 - name: Install pod network
-  command: kubectl apply -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
+  command: kubectl apply -f https://docs.projectcalico.org/v3.18/manifests/calico.yaml
   environment:
     KUBECONFIG: /etc/kubernetes/admin.conf
+...
