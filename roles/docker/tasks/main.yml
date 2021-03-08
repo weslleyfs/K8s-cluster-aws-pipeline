@@ -18,3 +18,4 @@
   apt:
     name: "{{ item }}"
   loop: "{{ docker_packages }}"
+...

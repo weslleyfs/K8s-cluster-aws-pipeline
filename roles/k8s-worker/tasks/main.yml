@@ -7,3 +7,4 @@
 
 - name: Run command on remote
   shell: /opt/kubejoin.sh
+...
