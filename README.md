@@ -14,7 +14,7 @@ Este é apenas um projeto utilizado para estudo visando aprender e entender melh
 
 - Terraform cria 3 instancias na AWS, um Security Group e uma Keypair.
 - Ansible instala e configura o Kubernetes.
-- Eles trabalham juntos em uma pipeline do https://drone.io
+- Eles trabalham juntos em uma pipeline do https://drone.io, para funcionar se faz necessário criar as chaves dentro das configuracoes do repositorio no Drone CI
 - O Drone CI usa um container Docker que foi criado com Terraform e Ansible, a imagem foi disponibilizada no Docker Hub: 'docker pull weslleyf/ansibleandterraform'
 
 ## O objetivo
