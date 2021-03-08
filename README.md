@@ -1,9 +1,8 @@
 
 # K8S Single Cluster-aws-pipeline
-This is just a personal project willing to summarize some of the DevOps topics I've been studying in order to understand how they fit together.
-## What did I use?
-The main idea was to use as much tools as I could:
+Este é apenas um projeto utilizado para estudo visando aprender e entender melhor a integracao das ferramentas
 
+## O que esta sendo utilizado?
  - Docker
  - Ansible
  - Terraform
@@ -11,12 +10,16 @@ The main idea was to use as much tools as I could:
  - AWS
  - Kubernetes
 
-## How does  it work?
+## Como funciona?
 
-- Terraform creates the 3 AWS instances, Security Group and a Keypair.
-- Ansible installs and configure Kubernetes.
-- They work together on a Drone CI pipeline.
-- The Drone CI uses a Docker container that I have created with Terraform and Ansible there.
+- Terraform cria 3 instancias na AWS, um Security Group e uma Keypair.
+- Ansible instala e configura o Kubernetes.
+- Eles trabalham juntos em uma pipeline do https://drone.io
+- O Drone CI usa um container Docker que foi criado com Terraform e Ansible, a imagem foi disponibilizada no Docker Hub: 'docker pull weslleyf/ansibleandterraform'
 
-## The goal
-The goal is just to setup a Kubernetes cluster within 3 AWS instances.
+## O objetivo
+O objetivo é criar um cluster K8S na AWS totalmente automatizado através de pipeline e entender cada passo.
+
+## A Base do projeto
+
+Como trata-se de aprendzado peguei o projeto base do repositorio ( https://github.com/mateusmuller/k8s-cluster-spinup) e estou estudando e aperfeiçoando ele.
