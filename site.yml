@@ -2,14 +2,14 @@
   become: yes
   hosts: tag_name_k8s
   roles:
-    #- docker
-    #- k8s-all
+    - docker
+    - k8s-all
 
 - name: Setup master node
   become: yes
   hosts: tag_type_master
   roles:
-    #- k8s-master
+    - k8s-master
 
 - name: Setup worker node
   become: yes

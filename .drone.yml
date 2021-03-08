@@ -25,10 +25,10 @@ steps:
   commands:
   - terraform apply -auto-approve
 
-#- name: Wait infra start on aws
-#  image: weslleyf/ansibleandterraform:latest
-#  commands:
-#  - sleep 20
+- name: Wait infra start on aws
+  image: weslleyf/ansibleandterraform:latest
+  commands:
+  - sleep 20
   
 - name: apply ansible playbook
   image: weslleyf/ansibleandterraform:latest
