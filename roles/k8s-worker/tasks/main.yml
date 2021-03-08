@@ -1,7 +1,10 @@
 ---
 - name: Set hostname Workers
   hostname:
-    name: "{{ hostname_variable }}"
+    name: "{{ ansible_hostname }}"
+  with_ansible_hostname:
+    - worker1
+    - worker2
 
 - name: Copy join to nodes
   copy:
