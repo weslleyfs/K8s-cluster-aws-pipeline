@@ -34,6 +34,10 @@
   shell: echo "export KUBECONFIG=/etc/kubernetes/admin.conf" >> ~root/.bashrc
   become: yes
 
+- name: Active kubectl Completation
+  shell: echo "source <(kubectl completion bash)" >> ~root/.bashrc
+  become: yes
+
 - name: Install pod network
   command: kubectl apply -f https://docs.projectcalico.org/v3.18/manifests/calico.yaml
   environment:
