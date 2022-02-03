@@ -19,7 +19,3 @@ Este é apenas um projeto utilizado para estudo visando aprender e entender melh
 
 ## O objetivo
 O objetivo é criar um cluster K8S na AWS totalmente automatizado através de pipeline e entender cada passo.
-
-## A Base do projeto
-
-Como trata-se de aprendzado peguei o projeto base do repositorio ( https://github.com/mateusmuller/k8s-cluster-spinup) e estou estudando e aperfeiçoando ele.
